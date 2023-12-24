@@ -1,0 +1,43 @@
+<main class="cd__main">
+    <div class="container my-5">
+        <h1 class="display-4">{{ toys.name }}</h1>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="main-img">
+                    <img class="img-fluid rounded" src="{{ toys.image }}" alt="Product Image">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="main-description px-2">
+                    <div class="price-area my-4">
+                        <p class="h4 text-success">${{ toys.price }}</p>
+                    </div>
+                </div>
+
+                <div class="product-details my-4">
+                    <h2 class="h5 text-color mb-3">Details</h2>
+                    <p class="description">{{ toys.detail }}</p>
+                </div>
+
+                <div class="row questions bg-light p-3">
+                    <div class="col-md-1 icon">
+                        <i class="fa-brands fa-rocketchat questions-icon"></i>
+                    </div>
+                    <div class="col-md-11 text">
+                        Have a question about our products at E-Store? Feel free to contact our representatives via
+                        live chat or email.
+                    </div>
+                </div>
+
+                <div class="delivery my-4">
+                    <p class="font-weight-bold mb-0">
+                        <span><i class="fa-solid fa-truck"></i></span> <b>
+                            Delivery within 3 days from the date of purchase
+                        </b>
+                    </p>
+                    <p class="text-secondary">Order now to get this product delivered</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <a class="btn btn-secondary mb-2"onclick="return confirm('You want to exit without saving?')"
+     href="/toy">Back to List</a>
+
+    <form class="mb-3" action="/toy/edit/{{ toy._id }}" method="post">
+        <h1 class="mb-4">Add New Toy</h1>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name of Toy:</label>
+            <input type="text" class="form-control" name="name" id="name" value="{{ toy.name }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Toy Image:</label>
+            <input type="url" class="form-control" name="image" id="image" value="{{ toy.image }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Toy Price:</label>
+            <input type="text" class="form-control" name="price" id="price" value="{{ toy.price }}" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="brand" class="form-label">Toy Brand:</label>
+            <select class="form-select" name="brand" id="brand">
+                {{#each brands }}
+                {{#equal toy.brand this._id }}
+                <option value="{{ this._id }}" selected> {{ name }}</option>
+                {{/equal}}
+                <option value="{{ _id }}"> {{ name }}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="detail" class="form-label">Toy Detail:</label>
+            <textarea class="form-control col-lg-8" name="detail" id="detail" rows="4"
+                required>{{ toy.detail }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>

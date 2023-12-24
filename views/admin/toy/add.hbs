@@ -1,0 +1,40 @@
+<div class="container mt-4">
+   <a class="btn btn-secondary mb-2" href="/toy"
+   onclick="return confirm('You want to exit without saving?')">Back to List</a>
+
+   <form class="mb-3" action="/toy/add" method="post">
+      <h1 class="mb-4">Add New Toy</h1>
+
+      <div class="mb-3">
+         <label for="name" class="form-label">Name of Toy:</label>
+         <input type="text" class="form-control" name="name" id="name" required>
+      </div>
+
+      <div class="mb-3">
+         <label for="image" class="form-label">Toy Image:</label>
+         <input type="url" class="form-control" name="image" id="image" required>
+      </div>
+
+      <div class="mb-3">
+         <label for="price" class="form-label">Toy Price:</label>
+         <input type="text" class="form-control" name="price" id="price" required>
+      </div>
+
+
+      <div class="mb-3">
+         <label for="brand" class="form-label">Toy Brand:</label>
+         <select class="form-select" name="brand" id="brand">
+            {{#each brands }}
+            <option value="{{ _id }}"> {{ name }}</option>
+            {{/each}}
+         </select>
+      </div>
+
+      <div class="mb-3">
+         <label for="detail" class="form-label">Toy Detail:</label>
+         <textarea class="form-control col-lg-8" name="detail" id="detail" rows="4" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add</button>
+   </form>
+</div>
